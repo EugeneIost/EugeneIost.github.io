@@ -1,0 +1,24 @@
+.nav-item {
+  margin: 0 5px;
+  position: relative;
+  font-size: 16px;
+  color: #ccd6f6;
+  font-family: "SF Mono";
+  counter-increment: item 1;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+  &:hover {
+    color: #64ffda;
+  }
+
+  &__link {
+    padding: 10px;
+    &::before {
+      content: "0" counter(item) ".";
+      margin-right: 5px;
+      color: #64ffda;
+      font-size: 14px;
+      text-align: right;
+    }
+  }
+}
