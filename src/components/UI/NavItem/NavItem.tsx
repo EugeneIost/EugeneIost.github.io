@@ -4,11 +4,12 @@ import styles from "./NavItem.module.scss";
 interface NavItemProps {
   children: ReactNode;
   href: string;
+  onClick?: () => void;
 }
 
-const NavItem = ({ children, href }: NavItemProps) => {
+const NavItem = ({ children, href, onClick }: NavItemProps) => {
   return (
-    <li className={styles["nav-item"]}>
+    <li onClick={() => onClick && onClick()} className={styles["nav-item"]}>
       <a className={styles["nav-item__link"]} href={href}>
         {children}
       </a>

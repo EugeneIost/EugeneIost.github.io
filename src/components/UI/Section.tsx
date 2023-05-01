@@ -1,14 +1,21 @@
 import { ReactNode } from "react";
+import cn from "classnames";
 
 interface SectionProps {
   children: ReactNode;
   id: string;
+  screenHeight?: boolean;
 }
 
-const Section = ({ children, id }: SectionProps) => {
+const Section = ({ children, id, screenHeight = true }: SectionProps) => {
   return (
     <section
-      className="max-w-[1200px] h-fit py-[100px] opacity-100 mx-auto"
+      className={cn(
+        "lg:max-w-[1000px] h-fit xl:py-25 py-20 opacity-100 mx-auto",
+        "md:w-[85%]",
+        "px-[25px]",
+        { "min-h-screen lg:min-h-fit": screenHeight }
+      )}
       id={id}
     >
       {children}

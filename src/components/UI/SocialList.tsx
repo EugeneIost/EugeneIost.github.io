@@ -1,10 +1,26 @@
 import GitHubIcon from "./GitHubIcon";
-import LinkedInIcon from "./LinkedInIcon";
 import TelegramIcon from "./TelegramIcon";
+import cn from "classnames";
+import VKIcon from "./VKIcon";
 
-const SocialList = () => {
+export enum SocialListOrientations {
+  HORIZONTAL = "horizontal",
+  VERTICAL = "VERTICAL",
+}
+
+interface SocialListProps {
+  orientation: SocialListOrientations;
+}
+
+const SocialList = ({ orientation }: SocialListProps) => {
   return (
-    <ul className="list-none flex flex-col items-center justify-center after:w-[1px] after:h-[90px] after:bg-light-slate after:block">
+    <ul
+      className={cn("list-none flex items-center justify-center", {
+        "flex-row": orientation === SocialListOrientations.HORIZONTAL,
+        "flex-col after:bg-light-slate after:w-[1px] after:h-[90px] after:block":
+          orientation === SocialListOrientations.VERTICAL,
+      })}
+    >
       <li className="w-[40px] h-[46px] flex items-center justify-center">
         <a
           href="https://t.me/eugene_skarb"
@@ -23,9 +39,16 @@ const SocialList = () => {
         </a>
       </li>
 
-      <li className="w-[40px] h-[46px] mb-[20px] flex items-center justify-center">
-        <a href="#" className="transition-all hover:text-green">
-          <LinkedInIcon />
+      <li
+        className={cn("w-[40px] h-[46px] flex items-center justify-center", {
+          "mb-[20px]": orientation === SocialListOrientations.VERTICAL,
+        })}
+      >
+        <a
+          href="https://vk.com/eugene_skarb"
+          className="transition-all hover:text-green"
+        >
+          <VKIcon />
         </a>
       </li>
     </ul>
