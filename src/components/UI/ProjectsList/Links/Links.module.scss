@@ -1,0 +1,7 @@
+.icon {
+  @apply pr-4 pt-4 flex justify-center items-center transition-all hover:text-green;
+}
+
+.icon-odd {
+  @apply md:pl-4 md:pr-0;
+}
