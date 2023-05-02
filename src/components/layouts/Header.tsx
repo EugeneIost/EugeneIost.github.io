@@ -57,7 +57,7 @@ const Header = () => {
   return (
     <header
       className={cn(
-        "fixed w-full h-[100px] flex justify-between items-center lg:px-[50px] shadow-[0_10px_30px_-10px_rgba(2,12,27,0.7)] transition-all",
+        "fixed w-screen h-[100px] flex justify-between items-center lg:px-[50px] shadow-[0_10px_30px_-10px_rgba(2,12,27,0.7)] transition-all",
         {
           "bg-[#0a192fd9] top-0 z-50 backdrop-blur-md":
             scrollDirection === "up",

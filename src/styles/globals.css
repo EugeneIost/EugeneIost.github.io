@@ -6,7 +6,6 @@
 @tailwind utilities;
 
 body {
-  /* font-family: "SF Mono", sans-serif; */
   font-family: "Roboto", sans-serif;
   min-height: 100%;
   overflow-x: hidden;

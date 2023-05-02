@@ -4,7 +4,7 @@ import styles from "./MainSection.module.scss";
 
 const MainSection = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Header />
 
       <main
